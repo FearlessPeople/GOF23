@@ -1,0 +1,5 @@
+com.fz.factory.noFactory包下内容为未使用工厂模式的情况
+com.fz.factory.simpleFactory简单工厂模式的实现
+com.fz.factory.factoryMethod工厂方法模式的实现
+com.fz.factory.abstractFactory抽象工厂模式的实现
+

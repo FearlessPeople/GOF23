@@ -1,0 +1,2 @@
+com.fz.proxy.staticProxy   静态代理
+com.fz.proxy.dynamicProxy  动态代理（重要）
