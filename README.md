@@ -1,5 +1,7 @@
 # [Java23种设计模式学习笔记](http://www.cnblogs.com/meet/p/5116504.html "Java23种设计模式学习笔记")
 
+[个人网站](http://www.fangzheng.tech)
+
 ### 创建型模式：关注对象的创建过程
 1. **[单例模式](http://www.cnblogs.com/meet/p/5116398.html)**：保证一个类只有一个实例，并且提供一个访问该实例的全局访问点
 主要：
