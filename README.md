@@ -1,14 +1,17 @@
-<h1 align="center">Java23种设计模式学习笔记和代码示例</h1>
+<h1 align="center">Java23种设计模式学习笔记及代码示例</h1>
 
 <div align="center">
 
 [个人网站](http://www.fangzheng.tech) | [cnblogs链接](https://www.cnblogs.com/meet/p/5116504.html)
 
-🚀「Java23种设计模式学习笔记和代码示例」是一个学习设计模式过程中的笔记记录，感谢互联网各大资源共享，如果本项目对你有用，点个Start，方便回顾知识~
-
+🚀「Java23种设计模式学习笔记及代码示例」是一个学习设计模式过程中的笔记记录，感谢互联网各大资源共享，如果本项目对你有用，点个Start，方便回顾知识~
+<p align="center">
+<img src="./images/gof23.png" style="border-radius: 15px;">
+</p>
 </div>
 
-## 列表
+
+## ✨列表
 
 1. [单例模式](http://www.cnblogs.com/meet/p/5116398.html) - 保证一个类只有一个实例，并且提供一个访问该实例的全局访问点
 2. [工厂模式](http://www.cnblogs.com/meet/p/5116400.html) - 用来生产同一等级结构中的任意产品
@@ -35,7 +38,7 @@
 23. [代理模式](http://www.cnblogs.com/meet/p/5116464.html) - 为其他对象提供一种代理以便控制对这个对象的访问。
 
 
-## 参考资料
+## 🖥参考资料
 
 - 大话设计模式(带目录完整版).pdf
 - HEAD_FIRST设计模式（中文版）.pdf
