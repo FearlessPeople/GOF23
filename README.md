@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[个人网站](http://www.fangzheng.tech) | [cnblogs链接](https://www.cnblogs.com/meet/p/5116504.html)
+[个人网站](http://www.fangzheng.tech) | [cnblogs链接](https://www.cnblogs.com/meet/p/5116504.html) | [学习交流](#学习交流) 
 
 🚀「Java23种设计模式学习笔记及代码示例」是一个学习设计模式过程中的笔记记录，感谢互联网各大资源共享，如果本项目对你有用，点个Start，方便回顾知识~
 <p align="center">
@@ -43,3 +43,10 @@
 - 大话设计模式(带目录完整版).pdf
 - HEAD_FIRST设计模式（中文版）.pdf
 - 尚学堂_高淇_java300集最全视频教程_【GOF23设计模式】
+
+## 学习交流
+
+加作者微信：FearlessMan888，进群交流，朋友圈每天分享IT圈最新消息~
+
+<img src="https://s2.loli.net/2024/01/22/YmHei9hUw4avZtS.png" style="width:258px;height:300px;"></img>
+
