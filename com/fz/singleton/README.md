@@ -1,4 +1,4 @@
-## 一、单例模式介绍
+## 模式介绍
 
 单例模式：保证一个类只有一个实例，并且提供一个访问该实例的全局访问点。
 
@@ -22,7 +22,7 @@
 
 5. 枚举单例（线程安全，调用效率高，不能延时加载）
 
-## 二、单例模式实例代码
+## 实例代码
 
 ### 懒汉式
 
@@ -231,17 +231,18 @@ public class TestReflect {
     }
 }
 ```
+
 如何防止反射破解单例模式呢？
 
 在Singleton6构造的时候，假如不是第一次就直接抛出异常。不让创建。这样第二次构建的话就直接抛出异常了。
 
 ```java
 private Singleton6(){
-    if (instance != null) {
+        if(instance!=null){
         //如果不是第一次构建，则直接抛出异常。不让创建
         throw new RuntimeException();
-    }
-}
+        }
+        }
 ```
 
 ### 通过反序列化
@@ -250,13 +251,12 @@ private Singleton6(){
 
 ```java
 package com.fz.singleton;
- 
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.lang.reflect.Constructor;
- 
+
 /**
  * 通过反射破解单例模式
  */
@@ -264,7 +264,7 @@ public class TestReflect {
     public static void main(String[] args) throws Exception {
         Singleton6 s1 = Singleton6.getInstance();
         Singleton6 s2 = Singleton6.getInstance();
- 
+
         //通过反序列化构建对象：通过序列化将s1存储到硬盘上，然后再通过反序列化把s1再构建出来
         FileOutputStream fos = new FileOutputStream("e:/a.txt");
         ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -275,7 +275,7 @@ public class TestReflect {
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream("e:/a.txt"));
         Singleton6 s5 = (Singleton6) ois.readObject();
         System.out.println(s5);//此时打印出一个新对象
-        System.out.println(s1==s5);//false
+        System.out.println(s1 == s5);//false
     }
 }
 ```
@@ -286,10 +286,10 @@ public class TestReflect {
 
 ```java
 package com.fz.singleton;
- 
+
 import java.io.ObjectStreamException;
 import java.io.Serializable;
- 
+
 /**
  * 用于测试反射破解的单例类
  */
@@ -299,32 +299,34 @@ public class Singleton6 implements Serializable {
      * 当类加载器加载该类时，就new一个实例出来。从属于这个类。不管后面用不用这个类。所以没有延时加载功能
      */
     private static Singleton6 instance = new Singleton6();
+
     /**
      * 2、私有化构造器:外部是不能直接new该对象的
      */
-    private Singleton6(){
+    private Singleton6() {
         if (instance != null) {
             //如果不是第一次构建，则直接抛出异常。不让创建
             throw new RuntimeException();
         }
     }
+
     /**
      * 3、对外提供一个公共方法来获取这个唯一对象（方法没有使用synchronized则调用效率高）
      * @return
      */
-    public static Singleton6 getInstance(){
+    public static Singleton6 getInstance() {
         return instance;
     }
-     
+
     /**
      * 反序列化时，如果定义了readResolve()则直接返回该方法指定的实例。不会再单独创建新对象！
      * @return
      * @throws ObjectStreamException
      */
-    private Object readResolve() throws ObjectStreamException{
+    private Object readResolve() throws ObjectStreamException {
         return instance;
     }
-     
+
 }
 ```
 
@@ -332,9 +334,9 @@ public class Singleton6 implements Serializable {
 
 ```java
 package com.fz.singleton;
-  
+
 import java.util.concurrent.CountDownLatch;
-  
+
 /**
  * 测试几种单例模式的速度
  */
@@ -343,7 +345,7 @@ public class TestSingleton {
         long start = System.currentTimeMillis();
         int threadNum = 10;//10个线程
         final CountDownLatch countDownLatch = new CountDownLatch(threadNum);
-          
+
         for (int i = 0; i < threadNum; i++) {
             new Thread(new Runnable() {
                 @Override
@@ -355,11 +357,11 @@ public class TestSingleton {
                 }
             }).start();
         }
-          
+
         countDownLatch.await();//main线程阻塞
         long end = System.currentTimeMillis();
-        System.out.println("耗时："+(end-start));
-          
+        System.out.println("耗时：" + (end - start));
+
         /**
          * 结果（毫秒）:
          * Singleton1（饿汉式）耗时：5
@@ -372,13 +374,13 @@ public class TestSingleton {
 }
 ```
 
-## 四、总结
+## 总结
 
 ### 如何选用？
 
-1. 枚举式  好于  饿汉式
+1. 枚举式 好于 饿汉式
 
-2. 静态内部类式  好于 懒汉式
+2. 静态内部类式 好于 懒汉式
 
 ### 常见应用场景
 
